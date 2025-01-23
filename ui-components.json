@@ -1,0 +1,14 @@
+[
+  {
+    "id": "button-1",
+    "category": "Buttons",
+    "name": "Primary Button",
+    "file": "PrimaryButton.tsx"
+  },
+  {
+    "id": "navbar-1",
+    "category": "Navbars",
+    "name": "Simple Navbar",
+    "file": "SimpleNavbar.tsx"
+  }
+]

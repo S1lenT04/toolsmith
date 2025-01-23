@@ -1,0 +1,18 @@
+import React from "react";
+
+export const components = {
+  "button-01": {
+    name: "button-01",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import React from "react";\r\n\r\nconst Button = () => {\r\n  return (\r\n    <div>\r\n      <button className="bg-neutral-50 dark:bg-gray-800 font-semibold py-3 px-16 rounded-full">\r\n        Click\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n',
+        path: "ui/button-01.tsx",
+        target: "components/ui/button-01.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/button-01")),
+  },
+} as const;
