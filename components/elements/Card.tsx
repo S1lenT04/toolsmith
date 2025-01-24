@@ -99,7 +99,7 @@ const Card: React.FC<CardProps> = ({ title, name, filePath }) => {
               )}
 
               <div className="absolute right-2 top-2 flex gap-2">
-                <FullScreenPreview />
+                <FullScreenPreview name={name} />
                 <CopyBtn />
               </div>
             </ScrollArea>

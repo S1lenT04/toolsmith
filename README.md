@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Creating a new component/category
 
-## Getting Started
+For creating a new component you have to create some files, here's where u should work on for the files:
 
-First, run the development server:
+## Instructions
+
+1. First of all go into (`@/config/DocsConfig.tsx`), here you can create new `Category` and `Component` that will be used in the SideBar and to display the respective `Components`.
+2. Now creating the `Component` literally you have to go inside (`@/registry/ui/nameOfTheNewComponent.tsx`) and after creating it, go to (`@/registry/registry-components.ts`) and update the code so user could use the `prompt command` to import into his project.
+3. After doing the last 2 steps you can now `run the command below to create the .json file` so the prompt command work as expected.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx tsx ./scripts/build-registry.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Now to finish the process of creating a new component/category just go to (`@/__registry__/index.ts`) and create the component data, just copy paste the above component and change the basic stuff. For the content just copy from `.json` file created early.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## The website
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Here is the website, [ToolSmith](https://toolsmith.vercel.app/)
