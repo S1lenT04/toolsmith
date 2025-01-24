@@ -29,6 +29,8 @@ const Card: React.FC<CardProps> = ({ title, name, filePath }) => {
       : undefined;
   const componentCode = componentEntry?.files[0]?.content;
 
+  const prompt = `npx shadcn@latest add https://toolsmith.vercel.app${filePath}`;
+
   return (
     <Dialog>
       <div className="grid grid-cols-1 gap-4">
@@ -100,7 +102,7 @@ const Card: React.FC<CardProps> = ({ title, name, filePath }) => {
 
               <div className="absolute right-2 top-2 flex gap-2">
                 <FullScreenPreview name={name} />
-                <CopyBtn />
+                <CopyBtn code={componentCode} />
               </div>
             </ScrollArea>
           </section>
@@ -113,9 +115,11 @@ const Card: React.FC<CardProps> = ({ title, name, filePath }) => {
                 npm
               </span>
 
-              <p className="mt-3 sm:text-base text-xs">
-                npx shadcn@latest add https://toolsmith.vercel.app{filePath}
-              </p>
+              <p className="mt-4 mb-3 sm:text-base text-xs">{prompt}</p>
+
+              <div className="absolute right-2 top-2 flex gap-2">
+                <CopyBtn code={prompt} />
+              </div>
             </div>
           </section>
         </section>

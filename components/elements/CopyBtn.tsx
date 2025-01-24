@@ -11,16 +11,22 @@ import {
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
-export default function CopyBtn() {
+interface CopyBtnProps {
+  code?: string; // Make the code prop optional
+}
+
+export default function CopyBtn({ code }: CopyBtnProps) {
   const [copied, setCopied] = useState<boolean>(false);
 
   const handleCopy = async () => {
-    try {
-      // await navigator.clipboard.writeText("string to copy");
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
+    if (code) {
+      try {
+        await navigator.clipboard.writeText(code);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      } catch (err) {
+        console.error("Failed to copy text: ", err);
+      }
     }
   };
 
@@ -34,7 +40,7 @@ export default function CopyBtn() {
             className="disabled:opacity-100 bg-neutral-50 dark:bg-gray-800 border-slate-500"
             onClick={handleCopy}
             aria-label={copied ? "Copied" : "Copy to clipboard"}
-            disabled={copied}
+            disabled={copied || !code}
           >
             <div
               className={cn(

@@ -1,21 +1,44 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { docsConfig } from "@/config/DocsConfig";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-export default function layout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const params = useParams();
+  // Ensure the category is a string
+  const category = Array.isArray(params.category)
+    ? params.category[0]
+    : params.category;
+
+  const capitalizeFirstLetter = (str: string) =>
+    str.charAt(0).toUpperCase() + str.slice(1);
+
+  // State for category title
+  const [currentTitle, setCurrentTitle] = useState(
+    category ? capitalizeFirstLetter(category) : "Category not found"
+  );
+
+  const handleTriggerClick = () => {
+    setCurrentTitle((prevTitle) =>
+      prevTitle === "Categories"
+        ? capitalizeFirstLetter(category) || "Category not found"
+        : "Categories"
+    );
+  };
+
   return (
     <>
       <section className="w-full px-4 mt-8">
@@ -29,7 +52,7 @@ export default function layout({
                 <Link
                   key={index}
                   href={category.href}
-                  className="pl-2 mt-1 border-b-[2px] border-slate-500 py-2 cursor-pointer"
+                  className="pl-2 mt-1 border-b-[2px] border-slate-500 py-2 cursor-pointer w-full"
                 >
                   {category.title}
                 </Link>
@@ -38,42 +61,32 @@ export default function layout({
           </ScrollArea>
 
           <div className="w-full">
+            <div className="bg-neutral-50 dark:bg-gray-800 px-3 border-none rounded-md py-4 hidden sm:block">
+              <span className="text-lg font-medium">{currentTitle}</span>
+            </div>
+
             <Accordion type="single" collapsible>
               <AccordionItem
                 value="item-1"
-                className="bg-neutral-50 dark:bg-gray-800 px-3 border-none rounded-md"
+                className="bg-neutral-50 dark:bg-gray-800 px-3 border-none rounded-md block sm:hidden"
               >
-                <AccordionTrigger className="text-lg font-medium">
-                  Navbar
+                <AccordionTrigger
+                  className="text-lg font-medium"
+                  onClick={handleTriggerClick} // Toggle title on click
+                >
+                  {currentTitle}
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="mt-1 ml-2">
-                    <span className="font-medium text-lg">Filter</span>
-                  </div>
-                  <div className="flex flex-wrap gap-3 mt-4 ml-2">
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="React" />
-                      <Label htmlFor="React" className="cursor-pointer">
-                        React
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="Tailwind" />
-                      <Label htmlFor="Tailwind" className="cursor-pointer">
-                        Tailwind css
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="shadcn" />
-                      <Label htmlFor="shadcn" className="cursor-pointer">
-                        shadcn/ui
-                      </Label>
-                    </div>
-                  </div>
-                  <div className="flex justify-end mt-6">
-                    <button className="px-5 py-1.5 bg-slate-500 rounded-md text-white hover:">
-                      Apply
-                    </button>
+                  <div className="w-full flex flex-col overflow-y-scroll max-h-[190px]">
+                    {docsConfig.categories.map((category, index) => (
+                      <Link
+                        key={index}
+                        href={category.href}
+                        className="pl-2 mt-1 border-b-[2px] border-slate-500 py-2 cursor-pointer w-full"
+                      >
+                        {category.title}
+                      </Link>
+                    ))}
                   </div>
                 </AccordionContent>
               </AccordionItem>
