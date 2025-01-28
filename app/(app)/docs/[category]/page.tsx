@@ -103,7 +103,7 @@ const CategoryPage = ({ params }: Props) => {
                   </TabsList>
                   <TabsContent value="preview" className="mt-5">
                     <Card className="relative">
-                      <CardContent className="pt-6 w-full relative flex items-center justify-center">
+                      <CardContent className="pt-6 w-full relative flex items-center justify-center lg:p-6 p-2">
                         <Preview name={component.name} />
                         <FullScreenPreview name={component.name} />
                       </CardContent>
@@ -112,7 +112,7 @@ const CategoryPage = ({ params }: Props) => {
                   <TabsContent value="code" className="mt-5">
                     <Card className="relative">
                       <ScrollArea className="h-56 sm:h-96 max-h-96 rounded-md relative p-2 overflow-x-auto overflow-y-auto">
-                        <pre className="whitespace-pre-wrap break-words">
+                        <pre className="whitespace-pre-wrap break-words text-xs md:text-base">
                           <CardComp name={component.name} />
                         </pre>
                       </ScrollArea>

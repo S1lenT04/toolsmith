@@ -8,7 +8,7 @@ const PreviewPage = ({ params }: { params: { name: string } }) => {
   return (
     <>
       <BackButton />
-      <div className="w-full min-h-dvh flex justify-center items-center bg-slate-100 dark:bg-gray-800">
+      <div className="w-full min-h-dvh flex justify-center items-center bg-slate-50 dark:bg-gray-800">
         <Preview name={name} />
       </div>
     </>

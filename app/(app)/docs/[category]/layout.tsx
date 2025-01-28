@@ -16,7 +16,7 @@ export default function Layout({
     <>
       <section className="w-full h-auto">
         <div className="w-full h-auto flex gap-4 pt-4 px-4">
-          <div className="w-80 sticky top-20 h-full">
+          <div className="w-80 sticky top-20 h-full md:block hidden">
             <div className="flex flex-col gap-2 mb-10">
               <span className="font-semibold">Getting Started</span>
               <span className="dark:text-stone-200 text-sm dark:hover:text-slate-400 cursor-not-allowed">
@@ -34,7 +34,7 @@ export default function Layout({
                   <Link
                     key={index}
                     href={category.href}
-                    className={`dark:text-stone-200 text-sm dark:hover:text-slate-400 flex items-center ${
+                    className={`text-sm dark:hover:text-slate-400 flex items-center ${
                       pathname === category.href
                         ? "dark:text-slate-400 text-slate-400"
                         : ""
