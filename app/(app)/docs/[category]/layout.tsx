@@ -1,100 +1,71 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import React from "react";
 import { docsConfig } from "@/config/DocsConfig";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const params = useParams();
-  // Ensure the category is a string
-  const category = Array.isArray(params.category)
-    ? params.category[0]
-    : params.category;
-
-  const capitalizeFirstLetter = (str: string) =>
-    str.charAt(0).toUpperCase() + str.slice(1);
-
-  // State for category title
-  const [currentTitle, setCurrentTitle] = useState(
-    category ? capitalizeFirstLetter(category) : "Category not found"
-  );
-
-  const handleTriggerClick = () => {
-    setCurrentTitle((prevTitle) =>
-      prevTitle === "Categories"
-        ? capitalizeFirstLetter(category) || "Category not found"
-        : "Categories"
-    );
-  };
+  const pathname = usePathname();
 
   return (
     <>
-      <section className="w-full px-4 mt-8">
-        <section className="flex gap-4">
-          <ScrollArea className="h-auto max-h-[500px] w-[350px] rounded-md bg-neutral-50 dark:bg-gray-800 p-4 sm:block hidden">
-            <div className="w-full sticky top-0 bg-neutral-50 dark:bg-gray-800 pb-1">
-              <span className="text-xl font-semibold">Categories</span>
-            </div>
-            <div className="w-full flex flex-col">
-              {docsConfig.categories.map((category, index) => (
-                <Link
-                  key={index}
-                  href={category.href}
-                  className="pl-2 mt-1 border-b-[2px] border-slate-500 py-2 cursor-pointer w-full"
-                >
-                  {category.title}
-                </Link>
-              ))}
-            </div>
-          </ScrollArea>
-
-          <div className="w-full">
-            <div className="bg-neutral-50 dark:bg-gray-800 px-3 border-none rounded-md py-4 hidden sm:block">
-              <span className="text-lg font-medium">{currentTitle}</span>
+      <section className="w-full h-auto">
+        <div className="w-full h-auto flex gap-4 pt-4 px-4">
+          <div className="w-80 sticky top-20 h-full">
+            <div className="flex flex-col gap-2 mb-10">
+              <span className="font-semibold">Getting Started</span>
+              <span className="dark:text-stone-200 text-sm dark:hover:text-slate-400 cursor-not-allowed">
+                Introduction
+              </span>
             </div>
 
-            <Accordion type="single" collapsible>
-              <AccordionItem
-                value="item-1"
-                className="bg-neutral-50 dark:bg-gray-800 px-3 border-none rounded-md block sm:hidden"
-              >
-                <AccordionTrigger
-                  className="text-lg font-medium"
-                  onClick={handleTriggerClick} // Toggle title on click
-                >
-                  {currentTitle}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="w-full flex flex-col overflow-y-scroll max-h-[190px]">
-                    {docsConfig.categories.map((category, index) => (
-                      <Link
-                        key={index}
-                        href={category.href}
-                        className="pl-2 mt-1 border-b-[2px] border-slate-500 py-2 cursor-pointer w-full"
-                      >
-                        {category.title}
-                      </Link>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            {/* Components Section */}
+            <span className="font-semibold">Components</span>
 
-            {children}
+            {/* Dynamic Categories */}
+            <div className="mb-8">
+              <div className="flex flex-col gap-2 mt-2">
+                {docsConfig.categories.map((category, index) => (
+                  <Link
+                    key={index}
+                    href={category.href}
+                    className={`dark:text-stone-200 text-sm dark:hover:text-slate-400 flex items-center ${
+                      pathname === category.href
+                        ? "dark:text-slate-400 text-slate-400"
+                        : ""
+                    }`}
+                  >
+                    {category.title}
+                    {category.components.map((component) => {
+                      // Check if status exists and render accordingly
+                      return (
+                        <>
+                          {component.status && component.status === "new" && (
+                            <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
+                              New
+                            </span>
+                          )}
+                          {component.status &&
+                            component.status === "updated" && (
+                              <span className="ml-2 text-xs bg-blue-500 text-white px-2 py-0.5 rounded-full">
+                                Updated
+                              </span>
+                            )}
+                        </>
+                      );
+                    })}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-        </section>
+          <div className="w-full">{children}</div>
+        </div>
       </section>
     </>
   );

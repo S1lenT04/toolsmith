@@ -18,7 +18,7 @@ const FullScreenPreview: React.FC<FullscreenButtonProps> = ({ name }) => {
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Link href={`/preview/${name}`}>
+          <Link href={`/preview/${name}`} className="absolute top-3 right-3">
             <Button
               variant="outline"
               size="icon"

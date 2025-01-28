@@ -3,7 +3,7 @@ import React from "react";
 const Button = () => {
   return (
     <>
-      <button className="bg-neutral-50 dark:bg-gray-800 font-semibold py-3 px-16 rounded-full">
+      <button className="dark:bg-[#243041] bg-slate-100 font-semibold py-3 px-16 rounded-full">
         Click
       </button>
     </>

@@ -12,6 +12,7 @@ export interface Component {
   title: string;
   name: string;
   filePath: string;
+  status?: "new" | "updated";
 }
 
 export const docsConfig: DocsConfig = {
@@ -21,20 +22,21 @@ export const docsConfig: DocsConfig = {
       href: "/docs/button",
       components: [
         {
-          title: "Button 01",
+          title: "Button",
           name: "button-01",
-          filePath: "/registry/ui/button-01.json",
+          filePath: "/registry/button-01.json",
         },
       ],
     },
     {
-      title: "Navbar",
-      href: "/docs/navbar",
+      title: "Form",
+      href: "/docs/form",
       components: [
         {
-          title: "Navbar 01",
-          name: "navbar-01",
-          filePath: "/registry/ui/navbar-01.json",
+          title: "Form",
+          name: "form-01",
+          filePath: "/registry/form-01.json",
+          status: "new",
         },
       ],
     },

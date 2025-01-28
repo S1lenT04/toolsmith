@@ -1,5 +1,6 @@
 import { Github } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -19,7 +20,9 @@ const Footer = () => {
             <p className="text-slate-500 font-semibold">Ivo Cunha</p>
           </div>
 
-          <Github className="w-5 h-5 text-slate-500" />
+          <Link href={"https://github.com/S1lenT04"}>
+            <Github className="w-5 h-5 text-slate-500" />
+          </Link>
         </div>
       </footer>
     </>
