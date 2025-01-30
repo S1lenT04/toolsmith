@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="bg-slate-100 dark:bg-[#243041] min-h-dvh w-screen flex flex-col justify-between">
+          <main className="bg-slate-100 dark:bg-[#243041] min-h-dvh w-screen flex flex-col justify-between max-w-full">
             <div className="w-full h-full flex flex-col items-center">
               <Navbar />
 

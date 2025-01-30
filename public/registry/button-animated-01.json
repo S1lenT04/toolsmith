@@ -1,0 +1,15 @@
+{
+  "name": "button-animated-01",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:ui",
+      "content": "import { ChevronRight } from \"lucide-react\";\r\nimport React from \"react\";\r\n\r\nconst Button = () => {\r\n  return (\r\n    <>\r\n      <button className=\"flex items-center group\">\r\n        <span className=\"font-semibold\">Click</span>\r\n        <div className=\"flex items-center ml-4 relative\">\r\n          <div className=\"bg-primary w-5 h-[2px] rounded-full transition-all duration-300 ease-in-out group-hover:w-7\"></div>\r\n          <ChevronRight className=\"text-primary absolute -right-2 transition-all duration-300 ease-in-out group-hover:-right-[10px]\" />\r\n        </div>\r\n      </button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n",
+      "path": "ui/button-animated-01.tsx",
+      "target": "components/ui/button-animated-01.tsx"
+    }
+  ]
+}

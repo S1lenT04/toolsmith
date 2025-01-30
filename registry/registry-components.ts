@@ -7,6 +7,17 @@ export const ui: Registry = [
     files: ["ui/button-01.tsx"],
   },
   {
+    name: "button-animated-01",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/button-animated-01.tsx"],
+  },
+  {
+    name: "button-animated-02",
+    type: "registry:ui",
+    files: ["ui/button-animated-02.tsx"],
+  },
+  {
     name: "form-01",
     type: "registry:ui",
     dependencies: ["lucide-react"],

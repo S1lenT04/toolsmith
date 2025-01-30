@@ -15,6 +15,34 @@ export const components = {
     ],
     component: React.lazy(() => import("@/registry/ui/button-01")),
   },
+  "button-animated-01": {
+    name: "button-animated-01",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import { ChevronRight } from "lucide-react";\r\nimport React from "react";\r\n\r\nconst Button = () => {\r\n  return (\r\n    <>\r\n      <button className="flex items-center group">\r\n        <span className="font-semibold">Click</span>\r\n        <div className="flex items-center ml-4 relative">\r\n          <div className="bg-primary w-5 h-[2px] rounded-full transition-all duration-300 ease-in-out group-hover:w-7"></div>\r\n          <ChevronRight className="text-primary absolute -right-2 transition-all duration-300 ease-in-out group-hover:-right-[10px]" />\r\n        </div>\r\n      </button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n',
+        path: "ui/button-animated-01.tsx",
+        target: "components/ui/button-animated-01.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/button-animated-01")),
+  },
+  "button-animated-02": {
+    name: "button-animated-02",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import React from "react";\r\n\r\nconst Button = () => {\r\n  return (\r\n    <>\r\n      <button className="bg-slate-500 py-2 px-4 transition-all rounded-lg hover:rounded-[50px] ease-linear duration-300 text-sm text-white">\r\n        Click\r\n      </button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n',
+        path: "ui/button-animated-02.tsx",
+        target: "components/ui/button-animated-02.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/button-animated-02")),
+  },
   "form-01": {
     name: "form-01",
     type: "registry:ui",

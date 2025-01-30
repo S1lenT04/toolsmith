@@ -87,11 +87,19 @@ const CategoryPage = ({ params }: Props) => {
             return (
               <div key={index}>
                 {/* Component Header */}
+                {index === 1 && components.length > 2 && (
+                  <div className="mt-14 flex flex-col gap-2 mb-6">
+                    <span className="font-bold text-3xl">Alternatives</span>
+                    <div className="w-full dark:bg-white/20 bg-stone-300 h-[1px] bottom-[2.5px] z-0" />
+                  </div>
+                )}
+
                 {index !== 0 && (
                   <div className="mb-4">
                     <span className="text-xl font-bold">{component.title}</span>
                   </div>
                 )}
+
                 {/* Tabs for Preview and Code */}
                 <Tabs defaultValue="preview" className="w-full">
                   <TabsList className="w-full justify-start relative">
@@ -103,7 +111,7 @@ const CategoryPage = ({ params }: Props) => {
                   </TabsList>
                   <TabsContent value="preview" className="mt-5">
                     <Card className="relative">
-                      <CardContent className="pt-6 w-full relative flex items-center justify-center lg:p-6 p-2">
+                      <CardContent className="pt-6 w-full relative flex items-center justify-center p-6">
                         <Preview name={component.name} />
                         <FullScreenPreview name={component.name} />
                       </CardContent>

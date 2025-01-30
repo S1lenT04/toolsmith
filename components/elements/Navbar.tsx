@@ -69,25 +69,16 @@ const Navbar = () => {
                     >
                       <SheetClose className="w-full text-left pl-2 py-2 flex items-center">
                         {category.title}
-                        {category.components.map((component) => {
-                          // Check if status exists and render accordingly
-                          return (
-                            <>
-                              {component.status &&
-                                component.status === "new" && (
-                                  <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
-                                    New
-                                  </span>
-                                )}
-                              {component.status &&
-                                component.status === "updated" && (
-                                  <span className="ml-2 text-xs bg-blue-500 text-white px-2 py-0.5 rounded-full">
-                                    Updated
-                                  </span>
-                                )}
-                            </>
-                          );
-                        })}
+                        {category.status === "new" && (
+                          <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
+                            New
+                          </span>
+                        )}
+                        {category.status === "updated" && (
+                          <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
+                            Updated
+                          </span>
+                        )}
                         <span className="sr-only">Close</span>
                       </SheetClose>
                     </Link>
