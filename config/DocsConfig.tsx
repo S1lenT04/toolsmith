@@ -20,7 +20,6 @@ export const docsConfig: DocsConfig = {
     {
       title: "Button",
       href: "/docs/button",
-      status: "updated",
       components: [
         {
           title: "Button",
@@ -42,12 +41,38 @@ export const docsConfig: DocsConfig = {
     {
       title: "Form",
       href: "/docs/form",
-      status: "new",
       components: [
         {
           title: "Form",
           name: "form-01",
           filePath: "/registry/form-01.json",
+        },
+      ],
+    },
+    {
+      title: "Input",
+      href: "/docs/input",
+      status: "new",
+      components: [
+        {
+          title: "Input",
+          name: "input-01",
+          filePath: "/registry/input-01.json",
+        },
+        {
+          title: "Input Animated 1",
+          name: "input-animated-01",
+          filePath: "/registry/input-animated-01.json",
+        },
+        {
+          title: "Input Animated 2",
+          name: "input-animated-02",
+          filePath: "/registry/input-animated-02.json",
+        },
+        {
+          title: "Password Input w/Eye",
+          name: "password-input-01",
+          filePath: "/registry/password-input-01.json",
         },
       ],
     },

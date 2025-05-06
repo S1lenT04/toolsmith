@@ -1,0 +1,15 @@
+{
+  "name": "input-01",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:ui",
+      "content": "import React from \"react\";\r\n\r\nconst Input01 = () => {\r\n  return (\r\n    <div className=\"flex flex-col gap-2 w-64\">\r\n      <label className=\"ml-1.5\">Input label</label>\r\n      <input\r\n        type=\"text\"\r\n        className=\"bg-transparent py-2 px-3 border border-slate-500 rounded-lg outline-none\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Input01;\r\n",
+      "path": "ui/input-01.tsx",
+      "target": "components/ui/input-01.tsx"
+    }
+  ]
+}

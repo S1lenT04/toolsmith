@@ -57,4 +57,60 @@ export const components = {
     ],
     component: React.lazy(() => import("@/registry/ui/form-01")),
   },
+  "input-01": {
+    name: "input-01",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import React from "react";\r\n\r\nconst Input01 = () => {\r\n  return (\r\n    <div className="flex flex-col gap-2 w-64">\r\n      <label className="ml-1.5">Input label</label>\r\n      <input\r\n        type="text"\r\n        className="bg-transparent py-2 px-3 border border-slate-500 rounded-lg outline-none"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Input01;\r\n',
+        path: "ui/input-01.tsx",
+        target: "components/ui/input-01.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/input-01")),
+  },
+  "input-animated-01": {
+    name: "input-animated-01",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import React from "react";\r\n\r\nconst InputAnimated01 = () => {\r\n  return (\r\n    <div className="relative w-64">\r\n      <input\r\n        type="text"\r\n        id="password1"\r\n        className="peer w-full px-3 pt-4 pb-2 border bg-transparent border-slate-500 rounded-lg focus:outline-none"\r\n        placeholder=" "\r\n      />\r\n      <label\r\n        htmlFor="password1"\r\n        className="absolute bg-slate-50 dark:bg-gray-800 left-3 px-1 -top-2 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm cursor-text"\r\n      >\r\n        Input label\r\n      </label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputAnimated01;\r\n',
+        path: "ui/input-animated-01.tsx",
+        target: "components/ui/input-animated-01.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/input-animated-01")),
+  },
+  "input-animated-02": {
+    name: "input-animated-02",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'import React from "react";\r\n\r\nconst InputAnimated02 = () => {\r\n  return (\r\n    <div className="relative w-64">\r\n      <input\r\n        type="text"\r\n        className="peer w-full px-3 pt-4 pb-2 border-b bg-transparent border-slate-500 focus:outline-none"\r\n        placeholder=" "\r\n        id="password2"\r\n      />\r\n      <label\r\n        htmlFor="password2"\r\n        className="absolute left-3 -top-2 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm cursor-text"\r\n      >\r\n        Input label\r\n      </label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputAnimated02;\r\n',
+        path: "ui/input-animated-02.tsx",
+        target: "components/ui/input-animated-02.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/input-animated-02")),
+  },
+  "password-input-01": {
+    name: "password-input-01",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          '"use client";\r\n\r\nimport React, { useState } from "react";\r\nimport { Eye, EyeOff } from "lucide-react";\r\n\r\nconst PasswordInput01 = () => {\r\n  const [showPassword, setShowPassword] = useState(false);\r\n\r\n  return (\r\n    <div className="relative w-64 flex items-center">\r\n      <input\r\n        type={showPassword ? "text" : "password"}\r\n        className="bg-transparent py-2 px-3 border border-slate-500 rounded-lg outline-none pr-11 w-full"\r\n        placeholder="Password"\r\n      />\r\n      <button\r\n        type="button"\r\n        className="absolute right-3 cursor-pointer text-gray-500"\r\n        onClick={() => setShowPassword(!showPassword)}\r\n      >\r\n        {showPassword ? <EyeOff /> : <Eye />}\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default PasswordInput01;\r\n',
+        path: "ui/password-input-01.tsx",
+        target: "components/ui/password-input-01.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/password-input-01")),
+  },
 } as const;

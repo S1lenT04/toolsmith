@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import React from "react";
 
-const Button = () => {
+const ButtonAnimated01 = () => {
   return (
     <>
       <button className="flex items-center group">
@@ -15,4 +15,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default ButtonAnimated01;

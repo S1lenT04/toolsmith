@@ -23,4 +23,28 @@ export const ui: Registry = [
     dependencies: ["lucide-react"],
     files: ["ui/form-01.tsx"],
   },
+  {
+    name: "input-01",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/input-01.tsx"],
+  },
+  {
+    name: "input-animated-01",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/input-animated-01.tsx"],
+  },
+  {
+    name: "input-animated-02",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/input-animated-02.tsx"],
+  },
+  {
+    name: "password-input-01",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/password-input-01.tsx"],
+  },
 ];

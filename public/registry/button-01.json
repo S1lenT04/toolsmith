@@ -4,7 +4,7 @@
   "files": [
     {
       "type": "registry:ui",
-      "content": "import React from \"react\";\r\n\r\nconst Button = () => {\r\n  return (\r\n    <>\r\n      <button className=\"dark:bg-[#243041] bg-slate-100 font-semibold py-3 px-16 rounded-full\">\r\n        Click\r\n      </button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Button;\r\n",
+      "content": "import React from \"react\";\r\n\r\nconst Button01 = () => {\r\n  return (\r\n    <>\r\n      <button className=\"dark:bg-[#243041] bg-slate-100 font-semibold py-3 px-16 rounded-full\">\r\n        Click\r\n      </button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Button01;\r\n",
       "path": "ui/button-01.tsx",
       "target": "components/ui/button-01.tsx"
     }

@@ -1,3 +1,5 @@
+"use client";
+
 import BackButton from "@/components/elements/BackButton";
 import Preview from "@/components/elements/component-preview";
 import React from "react";

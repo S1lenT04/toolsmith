@@ -1,0 +1,15 @@
+{
+  "name": "input-animated-01",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:ui",
+      "content": "import React from \"react\";\r\n\r\nconst InputAnimated01 = () => {\r\n  return (\r\n    <div className=\"relative w-64\">\r\n      <input\r\n        type=\"text\"\r\n        id=\"password1\"\r\n        className=\"peer w-full px-3 pt-4 pb-2 border bg-transparent border-slate-500 rounded-lg focus:outline-none\"\r\n        placeholder=\" \"\r\n      />\r\n      <label\r\n        htmlFor=\"password1\"\r\n        className=\"absolute bg-slate-50 dark:bg-gray-800 left-3 px-1 -top-2 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm cursor-text\"\r\n      >\r\n        Input label\r\n      </label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputAnimated01;\r\n",
+      "path": "ui/input-animated-01.tsx",
+      "target": "components/ui/input-animated-01.tsx"
+    }
+  ]
+}
