@@ -113,4 +113,18 @@ export const components = {
     ],
     component: React.lazy(() => import("@/registry/ui/password-input-01")),
   },
+  changelog: {
+    name: "changelog",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          'const changelog = () => {\r\n  const items = [\r\n    {\r\n      date: "September 3, 2024",\r\n      title: "Announcing Projects on Frontend Roadmap",\r\n    },\r\n    {\r\n      date: "August 28, 2024",\r\n      title: "Build your leaning habits with learning streaks",\r\n    },\r\n    { date: "August 25, 2024", title: "Git and GitHub Roadmap" },\r\n    {\r\n      date: "August 22, 2024",\r\n      title: "Submit your project solution and get feedback",\r\n    },\r\n    { date: "August 15, 2024", title: "Backend Project Ideas" },\r\n    { date: "August 10, 2024", title: "Redis roadmap" },\r\n    {\r\n      date: "August 1, 2024",\r\n      title: "Changelog page to help you stay in the loop",\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <main>\r\n      {/* Change Log */}\r\n      <div className="flex flex-col items-center justify-center gap-4 px-4">\r\n        <h2 className="text-4xl font-medium">Changelog</h2>\r\n        <p className="text-stone-400 text-sm text-center">\r\n          Here\'s everything we have shipped in the past few days\r\n        </p>\r\n\r\n        <div className="w-full flex flex-col items-center relative">\r\n          <div className="relative">\r\n            {items.map((i, index) => (\r\n              <div\r\n                key={index}\r\n                className="items-center grid grid-cols-[42px_1fr] sm:grid-cols-[160px_42px_400px] py-3"\r\n              >\r\n                <p\r\n                  key={i.date}\r\n                  className="text-stone-400 sm:block hidden text-right text-xs mr-4"\r\n                >\r\n                  {i.date}\r\n                </p>\r\n                {index === 0 && (\r\n                  <div className="w-[1.5px] h-full bg-slate-500 absolute top-0 sm:left-[165.5px] left-[5.5px]" />\r\n                )}\r\n                <div\r\n                  key={index}\r\n                  className="w-3 h-3 bg-slate-500 rounded-full z-10"\r\n                ></div>\r\n                <div className="flex flex-col">\r\n                  <p\r\n                    key={i.date}\r\n                    className="text-stone-400 sm:hidden block text-xs"\r\n                  >\r\n                    {i.date}\r\n                  </p>\r\n                  <p key={i.title} className="font-semibold">\r\n                    {i.title}\r\n                  </p>\r\n                </div>\r\n              </div>\r\n            ))}\r\n          </div>\r\n        </div>\r\n\r\n        <button className="bg-slate-500 text-white py-2 px-6 text-sm rounded-lg hover:scale-[1.03] active:scale-[0.98] transition-transform duration-200">\r\n          Visit Complete Changelog\r\n        </button>\r\n      </div>\r\n    </main>\r\n  );\r\n};\r\n\r\nexport default changelog;\r\n',
+        path: "ui/changelog.tsx",
+        target: "components/ui/changelog.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/changelog")),
+  },
 } as const;

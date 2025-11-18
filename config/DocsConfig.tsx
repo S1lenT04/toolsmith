@@ -76,5 +76,17 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Change Log",
+      href: "/docs/changelog",
+      status: "new",
+      components: [
+        {
+          title: "Change Log",
+          name: "changelog",
+          filePath: "/registry/changelog.json",
+        },
+      ],
+    },
   ],
 };

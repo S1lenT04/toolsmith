@@ -47,4 +47,10 @@ export const ui: Registry = [
     dependencies: ["lucide-react"],
     files: ["ui/password-input-01.tsx"],
   },
+  {
+    name: "changelog",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/changelog.tsx"],
+  },
 ];
