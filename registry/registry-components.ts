@@ -53,4 +53,10 @@ export const ui: Registry = [
     dependencies: ["lucide-react"],
     files: ["ui/changelog.tsx"],
   },
+  {
+    name: "tabs",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/tabs.tsx"],
+  },
 ];

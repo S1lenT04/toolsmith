@@ -17,7 +17,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   return (
     <>
-      <nav className="py-3 px-4  shadow-lg flex justify-center items-center w-full sticky top-0 z-50 backdrop-blur-md">
+      <nav className="py-3 px-4 shadow-lg flex justify-center items-center w-full sticky top-0 z-40 backdrop-blur-md">
         <div className="flex justify-between items-center max-w-[1584px] w-full">
           <div className="flex gap-1">
             <Sheet>

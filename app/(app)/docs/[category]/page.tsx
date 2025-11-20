@@ -111,7 +111,7 @@ const CategoryPage = ({ params }: Props) => {
                   </TabsList>
                   <TabsContent value="preview" className="mt-5">
                     <Card className="relative">
-                      <CardContent className="pt-6 w-full relative flex items-center justify-center p-6">
+                      <CardContent className="pt-6 w-full relative flex items-center justify-center p-6 min-h-72 z-0">
                         <Preview name={component.name} />
                         <FullScreenPreview name={component.name} />
                       </CardContent>

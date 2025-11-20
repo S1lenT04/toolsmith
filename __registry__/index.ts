@@ -127,4 +127,18 @@ export const components = {
     ],
     component: React.lazy(() => import("@/registry/ui/changelog")),
   },
+  tabs: {
+    name: "tabs",
+    type: "registry:ui",
+    files: [
+      {
+        type: "registry:ui",
+        content:
+          '"use client";\r\n\r\nimport { useState } from "react";\r\n\r\nconst tabs = () => {\r\n  const [active, setActive] = useState(0);\r\n\r\n  return (\r\n    <div className="relative inline-flex bg-gray-200 rounded-xl p-1 min-h-[40px] w-80">\r\n      <div\r\n        className="absolute inset-y-1 left-1 w-[48.7%] bg-white rounded-lg shadow transition-transform duration-300"\r\n        style={{\r\n          transform: `translateX(${active * 100}%)`,\r\n        }}\r\n      />\r\n\r\n      <button\r\n        onClick={() => setActive(0)}\r\n        className={`relative z-10 w-1/2 text-sm font-medium transition duration-300 py-2 ${\r\n          active === 0 ? "text-gray-900" : "text-gray-500"\r\n        }`}\r\n      >\r\n        Personal profile\r\n      </button>\r\n\r\n      <button\r\n        onClick={() => setActive(1)}\r\n        className={`relative z-10 w-1/2 text-sm font-medium transition duration-300 py-2 pl-2 ${\r\n          active === 1 ? "text-gray-900" : "text-gray-500"\r\n        }`}\r\n      >\r\n        Public profile\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default tabs;\r\n',
+        path: "ui/tabs.tsx",
+        target: "components/ui/tabs.tsx",
+      },
+    ],
+    component: React.lazy(() => import("@/registry/ui/tabs")),
+  },
 } as const;

@@ -52,7 +52,6 @@ export const docsConfig: DocsConfig = {
     {
       title: "Input",
       href: "/docs/input",
-      status: "new",
       components: [
         {
           title: "Input",
@@ -85,6 +84,18 @@ export const docsConfig: DocsConfig = {
           title: "Change Log",
           name: "changelog",
           filePath: "/registry/changelog.json",
+        },
+      ],
+    },
+    {
+      title: "Tabs",
+      href: "/docs/tabs",
+      status: "new",
+      components: [
+        {
+          title: "tabs",
+          name: "tabs",
+          filePath: "/registry/tabs.json",
         },
       ],
     },
