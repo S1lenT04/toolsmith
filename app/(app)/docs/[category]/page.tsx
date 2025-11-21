@@ -13,6 +13,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import CardComp from "@/components/elements/Card";
 import Preview from "@/components/elements/component-preview";
 import FullScreenPreview from "@/components/elements/FullScreenPreview";
+import Link from "next/link";
 
 interface Props {
   params: { category: string };
@@ -48,7 +49,7 @@ const CategoryPage = ({ params }: Props) => {
     );
   }
 
-  // Destructure components from the selected category
+  // Destructure components and status from the selected category
   const { title, components } = selectedCategory;
 
   return (
@@ -59,13 +60,13 @@ const CategoryPage = ({ params }: Props) => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="dark:text-stone-200 text-stone-600">
-                    Components
+                  <BreadcrumbPage className="dark:text-zinc-400 dark:hover:text-zinc-100 transition duration-300 text-stone-600">
+                    <Link href="/docs">Components</Link>
                   </BreadcrumbPage>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="dark:font-medium">
+                  <BreadcrumbPage className="dark:font-medium dark:text-white text-black">
                     {title}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
@@ -95,8 +96,11 @@ const CategoryPage = ({ params }: Props) => {
                 )}
 
                 {index !== 0 && (
-                  <div className="mb-4">
+                  <div className="mb-4 flex items-center">
                     <span className="text-xl font-bold">{component.title}</span>
+                    {component.status === "new" && (
+                      <div className="ml-2 text-xs bg-slate-500 text-white p-1 rounded-full"></div>
+                    )}
                   </div>
                 )}
 

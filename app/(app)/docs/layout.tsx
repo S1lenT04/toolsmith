@@ -30,33 +30,30 @@ export default function Layout({
             {/* Dynamic Categories */}
             <div className="mb-8">
               <div className="flex flex-col gap-2 mt-2">
-                {docsConfig.categories.map((category, index) => (
-                  <Link
-                    key={index}
-                    href={category.href}
-                    className={`text-sm dark:hover:text-slate-400 flex items-center ${
-                      pathname === category.href
-                        ? "dark:text-slate-400 text-slate-400"
-                        : ""
-                    }`}
-                  >
-                    {category.title}
-                    {category.status === "new" && (
-                      <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
-                        New
-                      </span>
-                    )}
-                    {category.status === "updated" && (
-                      <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
-                        Updated
-                      </span>
-                    )}
-                  </Link>
-                ))}
+                {docsConfig.categories
+                  .slice()
+                  .sort((a, b) => a.title.localeCompare(b.title))
+                  .map((category) => (
+                    <Link
+                      key={category.href}
+                      href={category.href}
+                      className={`text-sm dark:hover:text-slate-400 flex items-center ${
+                        pathname === category.href
+                          ? "dark:text-slate-400 text-slate-400"
+                          : ""
+                      }`}
+                    >
+                      {category.title}
+                      {(category.status === "new" ||
+                        category.status === "updated") && (
+                        <div className="ml-2 text-xs bg-slate-500 text-white p-1 mt-0.5 rounded-full"></div>
+                      )}
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>
-          <div className="w-full">{children}</div>
+          <div className="max-w-6xl w-full mx-auto">{children}</div>
         </div>
       </section>
     </>

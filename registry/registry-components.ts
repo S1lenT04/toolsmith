@@ -59,4 +59,16 @@ export const ui: Registry = [
     dependencies: ["lucide-react"],
     files: ["ui/tabs.tsx"],
   },
+  {
+    name: "button-animated-03",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/button-animated-03.tsx"],
+  },
+  {
+    name: "sidebar",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["ui/sidebar.tsx"],
+  },
 ];

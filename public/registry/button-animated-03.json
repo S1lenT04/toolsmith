@@ -1,0 +1,15 @@
+{
+  "name": "button-animated-03",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:ui",
+      "content": "import React from \"react\";\r\n\r\nconst ButtonAnimated03 = () => {\r\n  return (\r\n    <button className=\"bg-slate-500 text-white py-2 px-6 text-sm rounded-lg hover:scale-[1.03] active:scale-[0.98] font-medium transition-transform duration-200\">\r\n      Click\r\n    </button>\r\n  );\r\n};\r\n\r\nexport default ButtonAnimated03;\r\n",
+      "path": "ui/button-animated-03.tsx",
+      "target": "components/ui/button-animated-03.tsx"
+    }
+  ]
+}

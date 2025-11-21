@@ -61,28 +61,31 @@ const Navbar = () => {
                 <span className="text-lg font-semibold">Categories</span>
 
                 <div className="flex flex-col">
-                  {docsConfig.categories.map((category, index) => (
-                    <Link
-                      key={index}
-                      href={category.href}
-                      className="mt-1 border-b-[2px] border-slate-500"
-                    >
-                      <SheetClose className="w-full text-left pl-2 py-2 flex items-center">
-                        {category.title}
-                        {category.status === "new" && (
-                          <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
-                            New
-                          </span>
-                        )}
-                        {category.status === "updated" && (
-                          <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
-                            Updated
-                          </span>
-                        )}
-                        <span className="sr-only">Close</span>
-                      </SheetClose>
-                    </Link>
-                  ))}
+                  {docsConfig.categories
+                    .slice()
+                    .sort((a, b) => a.title.localeCompare(b.title))
+                    .map((category) => (
+                      <Link
+                        key={category.href}
+                        href={category.href}
+                        className="mt-1 border-b-[2px] border-slate-500"
+                      >
+                        <SheetClose className="w-full text-left pl-2 py-2 flex items-center">
+                          {category.title}
+                          {category.status === "new" && (
+                            <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
+                              New
+                            </span>
+                          )}
+                          {category.status === "updated" && (
+                            <span className="ml-2 text-xs bg-slate-500 text-white px-2 py-0.5 rounded-full">
+                              Updated
+                            </span>
+                          )}
+                          <span className="sr-only">Close</span>
+                        </SheetClose>
+                      </Link>
+                    ))}
                 </div>
               </SheetContent>
             </Sheet>

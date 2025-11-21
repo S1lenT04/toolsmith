@@ -17,7 +17,7 @@ export default function Home() {
 
         <div className="w-full flex justify-center mt-6">
           <Link
-            href={"/docs/button"}
+            href={"/docs"}
             className="bg-slate-500 py-2 px-4 transition-all rounded-lg hover:rounded-[50px] ease-in-out duration-500 text-sm text-white hover:bg-slate-600"
           >
             Browse Components

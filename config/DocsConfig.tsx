@@ -13,6 +13,7 @@ export interface Component {
   title: string;
   name: string;
   filePath: string;
+  status?: "new" | "updated";
 }
 
 export const docsConfig: DocsConfig = {
@@ -20,6 +21,7 @@ export const docsConfig: DocsConfig = {
     {
       title: "Button",
       href: "/docs/button",
+      status: "updated",
       components: [
         {
           title: "Button",
@@ -35,6 +37,12 @@ export const docsConfig: DocsConfig = {
           title: "Button Animated 2",
           name: "button-animated-02",
           filePath: "/registry/button-animated-02.json",
+        },
+        {
+          title: "Button Animated 3",
+          name: "button-animated-03",
+          status: "new",
+          filePath: "/registry/button-animated-03.json",
         },
       ],
     },
@@ -93,9 +101,21 @@ export const docsConfig: DocsConfig = {
       status: "new",
       components: [
         {
-          title: "tabs",
+          title: "Tabs",
           name: "tabs",
           filePath: "/registry/tabs.json",
+        },
+      ],
+    },
+    {
+      title: "Sidebar",
+      href: "/docs/sidebar",
+      status: "new",
+      components: [
+        {
+          title: "Sidebar",
+          name: "sidebar",
+          filePath: "/registry/sidebar.json",
         },
       ],
     },

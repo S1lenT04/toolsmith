@@ -20,7 +20,7 @@ const tabs = () => {
           active === 0 ? "text-white dark:text-gray-900" : "text-gray-500"
         }`}
       >
-        Personal profile
+        First Tab
       </button>
 
       <button
@@ -29,7 +29,7 @@ const tabs = () => {
           active === 1 ? "text-white dark:text-gray-900" : "text-gray-500"
         }`}
       >
-        Public profile
+        Second Tab
       </button>
     </div>
   );
